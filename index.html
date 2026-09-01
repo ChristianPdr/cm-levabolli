@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CM Levabolli | PDR</title>
+
+    <meta name="description"
+          content="CM Levabolli - Riparazione professionale delle ammaccature con tecnica PDR. Lodi, Milano e trasferte su richiesta.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b0b;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 11, 11, 0.95);
+            border-bottom: 1px solid #252525;
+            padding: 18px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 9px;
+            letter-spacing: 4px;
+            color: #999;
+            margin-top: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            background:
+                radial-gradient(circle at 80% 30%, #222 0%, #0b0b0b 45%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .eyebrow {
+            color: #999;
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(55px, 10vw, 110px);
+            line-height: 0.95;
+            letter-spacing: -5px;
+            margin-bottom: 30px;
+        }
+
+        h1 span {
+            color: #888;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: #aaa;
+            font-size: 19px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 24px;
+            background: #ffffff;
+            color: #000000;
+            font-weight: bold;
+            font-size: 14px;
+            border: 1px solid white;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: transparent;
+            color: white;
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: white;
+        }
+
+        section {
+            padding: 110px 8%;
+            border-top: 1px solid #222;
+        }
+
+        .section-label {
+            color: #777;
+            font-size: 11px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: clamp(40px, 6vw, 75px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .text {
+            max-width: 720px;
+            color: #aaa;
+            font-size: 18px;
+        }
+
+        .features {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            border: 1px solid #292929;
+            padding: 30px;
+            background: #111;
+        }
+
+        .feature-number {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 30px;
+        }
+
+        .feature h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .instagram {
+            text-align: center;
+            background: #f2f2f0;
+            color: #111;
+        }
+
+        .instagram .section-label {
+            color: #777;
+        }
+
+        .instagram .text {
+            color: #555;
+            margin: 0 auto 30px;
+        }
+
+        .instagram .button {
+            background: #111;
+            color: white;
+            border-color: #111;
+        }
+
+        .location {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .location-box {
+            border-left: 2px solid white;
+            padding-left: 30px;
+        }
+
+        .location-box strong {
+            font-size: 26px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .location-box p {
+            color: #888;
+        }
+
+        .contact {
+            background: #151515;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-link {
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .contact-link span {
+            color: #777;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        footer {
+            padding: 35px 8%;
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 12px;
+            border-top: 1px solid #222;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 16px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                min-height: 85vh;
+                padding: 70px 6%;
+            }
+
+            h1 {
+                font-size: 60px;
+                letter-spacing: -4px;
+            }
+
+            section {
+                padding: 80px 6%;
+            }
+
+            .features,
+            .location,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .location,
+            .contact-grid {
+                gap: 40px;
+            }
+
+            .feature {
+                padding: 25px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <!-- QUI INSERIREMO IL TUO LOGO -->
+    <a href="#home" class="logo">
+        CM LEVABOLLI
+        <span>PDR</span>
+    </a>
+
+    <nav>
+        <a href="#servizio">Servizio</a>
+        <a href="#chi-siamo">Chi siamo</a>
+        <a href="#contatti">Contatti</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            PDR · PAINTLESS DENT REPAIR
+        </div>
+
+        <h1>
+            La tua auto.<br>
+            <span>Come nuova.</span>
+        </h1>
+
+        <p>
+            Riparazione professionale delle ammaccature,
+            preservando la vernice originale quando possibile.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="button"
+                href="https://wa.me/393514702026?text=Ciao%20CM%20Levabolli%2C%20vorrei%20un%20preventivo."
+                target="_blank">
+                RICHIEDI UN PREVENTIVO
+            </a>
+
+            <a
+                class="button secondary"
+                href="https://www.instagram.com/cm_levabolli/"
+                target="_blank">
+                INSTAGRAM ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="servizio">
+
+    <div class="section-label">
+        IL SERVIZIO
+    </div>
+
+    <h2>
+        Levabolli PDR.
+    </h2>
+
+    <p class="text">
+        La tecnica Paintless Dent Repair permette di ripristinare
+        la carrozzeria intervenendo sull'ammaccatura senza
+        verniciare, quando le condizioni del danno lo consentono.
+    </p>
+
+</section>
+
+
+<section id="chi-siamo">
+
+    <div class="section-label">
+        PERCHÉ CM LEVABOLLI
+    </div>
+
+    <h2>
+        Precisione.<br>
+        Tecnica.<br>
+        Risultato.
+    </h2>
+
+    <div class="features">
+
+        <div class="feature">
+            <div class="feature-number">01</div>
+            <h3>Tecnica PDR</h3>
+            <p>
+                Intervento mirato sulla carrozzeria
+                per ripristinare la forma originale.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-number">02</div>
+            <h3>Vernice originale</h3>
+            <p>
+                La vernice viene preservata quando
+                il danno lo permette.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-number">03</div>
+            <h3>Trasferte</h3>
+            <p>
+                Lodi · Milano · Trasferte su richiesta.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="location">
+
+    <div>
+
+        <div class="section-label">
+            DOVE OPERiamo
+        </div>
+
+        <h2>
+            Lodi.<br>
+            Milano.<br>
+            Ovunque serva.
+        </h2>
+
+    </div>
+
+    <div class="location-box">
+
+        <strong>
+            Trasferte su richiesta
+        </strong>
+
+        <p>
+            Operiamo principalmente tra Lodi e Milano,
+            con disponibilità a trasferte anche a lunga distanza.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="instagram">
+
+    <div class="section-label">
+        IL NOSTRO LAVORO
+    </div>
+
+    <h2>
+        Guarda i lavori<br>
+        su Instagram.
+    </h2>
+
+    <p class="text">
+        Il nostro portfolio è su Instagram.
+        Scopri gli interventi realizzati e conosci meglio
+        CM Levabolli.
+    </p>
+
+    <a
+        class="button"
+        href="https://www.instagram.com/cm_levabolli/"
+        target="_blank">
+        VISITA INSTAGRAM ↗
+    </a>
+
+</section>
+
+
+<section class="contact" id="contatti">
+
+    <div class="contact-grid">
+
+        <div>
+
+            <div class="section-label">
+                CONTATTI
+            </div>
+
+            <h2>
+                Hai un'ammaccatura?
+            </h2>
+
+            <p class="text">
+                Mandaci una foto su WhatsApp per una prima valutazione.
+            </p>
+
+        </div>
+
+        <div class="contact-links">
+
+            <a
+                class="contact-link"
+                href="https://wa.me/393514702026"
+                target="_blank">
+
+                <span>WhatsApp</span>
+                351 470 2026
+
+            </a>
+
+            <a
+                class="contact-link"
+                href="mailto:cm.levabolli.pdr@gmail.com">
+
+                <span>Email</span>
+                cm.levabolli.pdr@gmail.com
+
+            </a>
+
+            <a
+                class="contact-link"
+                href="https://www.instagram.com/cm_levabolli/"
+                target="_blank">
+
+                <span>Instagram</span>
+                @cm_levabolli
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div>
+        <strong>CM LEVABOLLI</strong>
+    </div>
+
+    <div>
+        © 2026 CM Levabolli · PDR
+    </div>
+
+</footer>
+
+</body>
+</html>
